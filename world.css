@@ -1,0 +1,212 @@
+:root{
+
+    --primary:hsla(246, 55%, 10% ,0.65);
+    --secondary:hsla(245, 39%, 28% ,0.65);
+    --trinary:hsla(240, 27%, 19% ,0.65);
+    --forth:hsl(270, 100%, 50%) ;
+    --fifth:hsl(293, 100%, 50%);
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.image{
+
+    background-image: linear-gradient(var(--primary), var(--secondary) ,var(--trinary)), url(game.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 10px;
+    align-items: center;
+    /*background-color: black;
+    opacity: 0.55;
+    height:12vh ;*/
+    width: 100%;
+   
+
+}
+
+.logo{
+
+    font-size: 25px;
+    padding: 40px ;
+    color:var(--forth);
+    
+
+}
+
+.nav-menu{
+
+    display: inline-flex;
+    gap: 60px;
+    list-style: none;
+    padding: 30px;
+    position: relative;
+     
+}
+
+
+.nav-menu li a{
+
+    text-decoration: none;
+    color: white;
+
+    
+}
+
+
+.nav-menu li a:hover{
+
+    color: aqua; 
+     
+
+}
+
+i{
+    margin-right: 8px;
+}
+
+/*.nav-menu li {
+    width: 125px;
+    height: 15px;
+    padding: 15px;
+}
+
+.nav-menu li:hover{
+
+    background-color: black;
+}*/
+
+
+
+
+
+.content{
+
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    
+    
+}
+
+.content h2{
+
+    font-size: 35px;
+    color: white;
+    color: rgb(0, 255, 179);
+   
+}
+
+.content p{
+
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300px;
+    color: aliceblue;
+}
+
+
+.burger{
+    display: none;
+    cursor: pointer;
+    margin-top: -65px;
+    width: 2px;
+    position: relative;
+    top: 32px;
+    z-index: 8;
+  
+    
+}
+
+.bar{
+
+    display: block;
+    width: 20px;
+    height: 3px;
+    margin: 3px;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+    
+    
+    
+}
+
+@media(max-width:780px){
+
+    .content{
+
+        /*display: none;*/
+    }
+
+    .burger{
+        display: block;
+        
+       
+    }
+
+    .burger.active  .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .burger.active .bar:nth-child(1){
+
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .burger.active .bar:nth-child(3){
+
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+
+    .nav-menu{
+
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        left: -100%;
+        width: 100%;
+        align-items: center;
+        background-color: black;   
+        border-radius: 0;
+        z-index: 6;
+        transition:0.45s ease-in-out;
+    
+
+    }
+
+    .nav-menu li a {
+
+       position: relative;
+       top: 12vh;
+    }
+
+    .nav-menu.active{
+
+        left: 0%;
+        
+    }
+
+    
+}
+
+
+    
+
